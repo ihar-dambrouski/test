@@ -1,0 +1,16 @@
+.postComponent {
+  &__container {
+    flex: 1;
+    border-radius: 6px;
+    border: 1px solid black;
+    flex-direction: row;
+    padding: 10px 25px;
+    &:not(:first-child) {
+      margin-top: 10px;
+    }
+    p {
+      font-size: 16px;
+      font-weight: "600";
+    }
+  }
+}

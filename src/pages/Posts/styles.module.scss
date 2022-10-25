@@ -1,0 +1,9 @@
+@import "../../scss/repeat";
+
+.postsPage {
+  @extend %container;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+}
