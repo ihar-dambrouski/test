@@ -5,6 +5,7 @@
     border: 1px solid black;
     flex-direction: row;
     padding: 10px 25px;
+    width: 90%;
     &:not(:first-child) {
       margin-top: 10px;
     }

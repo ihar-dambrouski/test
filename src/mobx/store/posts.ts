@@ -15,6 +15,6 @@ export class PostsStore {
   }
 
   @action load(posts: Array<PostEntity>) {
-    this.postsMap = posts;
+    this.postsMap = this.postsMap.concat(posts);
   }
 }

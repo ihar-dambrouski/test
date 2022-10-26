@@ -1,4 +1,4 @@
-import { FC } from "react";
+import React, { FC } from "react";
 import { PostEntity } from "../../types/posts";
 import styles from "./styles.module.scss";
 
@@ -17,4 +17,4 @@ const Post: FC<PostProps> = ({ post }) => {
   );
 };
 
-export default Post;
+export default React.memo(Post);

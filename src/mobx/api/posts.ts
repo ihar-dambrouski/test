@@ -7,6 +7,9 @@ export default class PostsApi {
   public hasError = false;
   public isLoading = false;
   public errorMessage = "";
+  private currentPage = 1;
+  private limit = 15;
+  private fulliLoaded = false;
 
   constructor(private store: Store) {
     makeAutoObservable(this);
@@ -14,13 +17,22 @@ export default class PostsApi {
 
   fetchPosts = async () => {
     try {
+      if (this.fulliLoaded) return;
+
       this.isLoading = true;
 
-      const data = await getPosts();
-
-      this.store.posts.load(data);
+      const data = await getPosts({
+        page: this.currentPage,
+        limit: this.limit,
+      });
 
       this.isLoading = false;
+
+      if (data.length === 0) {
+        this.fulliLoaded = true;
+      }
+      this.currentPage += 1;
+      this.store.posts.load(data);
     } catch (e) {
       this.isLoading = false;
       this.hasError = true;

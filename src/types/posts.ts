@@ -4,3 +4,8 @@ export type PostEntity = {
   title: string;
   body: string;
 };
+
+export type GetPostsDTO = {
+  page: number;
+  limit: number;
+};

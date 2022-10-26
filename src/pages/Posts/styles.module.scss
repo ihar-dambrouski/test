@@ -2,6 +2,9 @@
 
 .postsPage {
   @extend %container;
+  max-height: 100vh;
+  overflow: hidden;
+  overflow-y: scroll;
   display: flex;
   flex: 1;
   flex-direction: column;
